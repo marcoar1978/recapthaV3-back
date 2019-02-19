@@ -2,6 +2,9 @@ const request = require('request');
 
 var api = {};
 
+
+
+
 api.verifTokenGoogle = function(req, res, next) {
     request(`https://www.google.com/recaptcha/api/siteverify?secret=6LftCZEUAAAAAHIZjV8o9qqQGXzW4FH6U0eP4rwR&response=${req.body['g-recaptcha-response']}`, { json: true }, (err, res1, body) => {
     if (err) { return console.log(err); }
